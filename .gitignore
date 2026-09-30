@@ -1,0 +1,12 @@
+# OS / editor
+.DS_Store
+*.swp
+*~
+
+# Local env / secrets
+.env
+.env.local
+.env.*.local
+
+# Memory CLI local state
+.memory/
