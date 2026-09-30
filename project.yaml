@@ -1,0 +1,15 @@
+projectInfo: |
+  # Product Specs Blueprint
+
+  An Emergent blueprint that installs the `product-specs` schema pack into a
+  Memory project, modelling an OpenSpec-style spec workflow as knowledge-graph
+  objects: capabilities, requirements, scenarios, changes, artifacts, task
+  groups, and tasks — plus release-anchored delivery and test-suite
+  verification.
+
+  9 object types and 10 relationship types. Ships with a bundled authoring
+  skill. Lets product specs live in the graph instead of repository files while
+  keeping a queryable product timeline (native object versioning + journal).
+
+  See README.md for the object/relationship reference, the workflow loop, and
+  the graph-only operating model.
