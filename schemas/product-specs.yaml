@@ -252,11 +252,17 @@ relationshipTypes:
   - name: delivered_in
     label: Delivered In
     description: >
-      A requirement or change was delivered in a release. The authoritative
-      delivery edge; Release.released_at is when it shipped.
-    sourceTypes:
-      - Requirement
-      - Change
+      A requirement was delivered in a release. The authoritative delivery
+      edge; Release.released_at is when it shipped.
+    sourceType: Requirement
+    targetType: Release
+
+  - name: delivered_in
+    label: Delivered In
+    description: >
+      A change was delivered in a release. Shares the delivered_in name with
+      the requirement edge; the two are distinguished by sourceType.
+    sourceType: Change
     targetType: Release
 
   - name: verified_by
