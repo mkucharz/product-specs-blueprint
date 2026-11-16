@@ -1,5 +1,5 @@
 name: product-specs
-version: "0.1.0"
+version: "0.1.1"
 description: >
   Product-spec schema for the Memory knowledge graph. Models an OpenSpec-style
   spec workflow — capabilities, requirements, scenarios, changes, artifacts,
@@ -24,12 +24,14 @@ objectTypes:
         description: "Human-readable capability name. E.g. Authentication"
       purpose:
         type: string
+        format: markdown
         description: "One-paragraph statement of what the capability provides."
       status:
         type: string
         description: "Lifecycle state. One of: active, deprecated"
       description:
         type: string
+        format: markdown
 
   - name: Requirement
     label: Requirement
@@ -41,6 +43,7 @@ objectTypes:
     properties:
       text:
         type: string
+        format: markdown
         description: "The requirement statement, including its normative keyword (SHALL/SHOULD/MAY)."
       strength:
         type: string
@@ -50,15 +53,18 @@ objectTypes:
         description: "How the owning change affects this requirement. One of: added, modified, removed"
       reason:
         type: string
+        format: markdown
         description: "Why the requirement is removed (only for origin: removed)."
       migration:
         type: string
+        format: markdown
         description: "Migration guidance for consumers (only for origin: removed)."
       status:
         type: string
         description: "Lifecycle state. One of: proposed, active, deprecated"
       description:
         type: string
+        format: markdown
 
   - name: Scenario
     label: Scenario
@@ -76,6 +82,7 @@ objectTypes:
         description: "One or more THEN clauses. E.g. [the user is authenticated]"
       description:
         type: string
+        format: markdown
 
   - name: Change
     label: Change
@@ -104,6 +111,7 @@ objectTypes:
         description: "Base branch/ref the change targets. E.g. main"
       description:
         type: string
+        format: markdown
 
   - name: Artifact
     label: Artifact
@@ -116,12 +124,14 @@ objectTypes:
         description: "Artifact kind. One of: proposal, design"
       body:
         type: string
+        format: markdown
         description: "Full markdown content of the artifact."
       order:
         type: number
         description: "Display order within the change."
       description:
         type: string
+        format: markdown
 
   - name: TaskGroup
     label: Task Group
@@ -135,6 +145,7 @@ objectTypes:
         description: "Section title. E.g. Gateway data layer"
       description:
         type: string
+        format: markdown
 
   - name: Task
     label: Task
@@ -145,12 +156,14 @@ objectTypes:
         description: "Task number within the change. E.g. 1.1"
       text:
         type: string
+        format: markdown
         description: "Task description."
       done:
         type: boolean
         description: "Whether the task is complete."
       description:
         type: string
+        format: markdown
 
   - name: Release
     label: Release
@@ -170,12 +183,14 @@ objectTypes:
         description: "ISO-8601 release timestamp."
       notes:
         type: string
+        format: markdown
         description: "Release notes."
       channel:
         type: string
         description: "Release channel. E.g. stable, beta, canary"
       description:
         type: string
+        format: markdown
 
   - name: TestSuite
     label: Test Suite
@@ -196,6 +211,7 @@ objectTypes:
         description: "ISO-8601 timestamp of the last passing run."
       description:
         type: string
+        format: markdown
 
 relationshipTypes:
 
